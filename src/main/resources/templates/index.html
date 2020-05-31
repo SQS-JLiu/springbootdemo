@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--假设您的网站将被带有不同屏幕分辨率的设备浏览, 那么将它设置为 device-width 可以确保它能正确呈现在不同设备上
+        initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
+    <title>欢迎登陆</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css"/>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<!--<body style=" background: url(http://global.bing.com/az/hprichbg/rb/RavenWolf_EN-US4433795745_1920x1080.jpg) no-repeat center center fixed; background-size: 100%;">-->
+<body style=" background: url(image/login_background.jpg) no-repeat center center fixed; background-size: 100%;">
+
+
+<div class="container">
+    <h2>欢迎登陆</h2>
+    <form action="login" method="post">
+        <div class="form-group">
+            <label>用户名：</label>
+            <input type="text" class="form-control" name="username" placeholder="用户名">
+        </div>
+        <div class="form-group">
+            <label>密码:</label>
+            <input type="password" class="form-control" name="password" placeholder="密码">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">登陆</button>
+    </form>
+</div>
+</body>
+</html>

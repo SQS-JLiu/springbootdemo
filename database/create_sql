@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS `mydb`;
+
+CREATE TABLE  IF NOT EXISTS `mydb`.`user` (
+
+`id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+`username` varchar(32) UNIQUE NOT NULL default '' COMMENT '用户名',
+`password` varchar(32) NOT NULL default '' COMMENT '密码',
+
+`create_date` date NOT NULL default '1999-01-01' COMMENT '创建日期',
+`last_date` date NOT NULL default '1999-01-01' COMMENT '创建日期',
+
+PRIMARY KEY (`id`)
+
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='用户表';
+
+insert into user(username,password,create_date,last_date) values("123","123",date(now()),date(now()));
+insert into user(username,password,create_date,last_date) values("zhangsan","123",date(now()),date(now()));
+insert into user(username,password,create_date,last_date) values("lisi","123",date(now()),date(now()));
+insert into user(username,password,create_date,last_date) values("wangwu","123",date(now()),date(now()));
+insert into user(username,password,create_date,last_date) values("zhaoliu","123",date(now()),date(now()));
+insert into user(username,password,create_date,last_date) values("laoqi","123",date(now()),date(now()));
+
+
+
+
+

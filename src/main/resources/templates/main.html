@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!--使用thymeleaf命名空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{bootstrap-3.3.7/css/bootstrap.min.css}" type="text/css"/>
+    <script th:src="@{js/jquery-3.5.1.js}"></script>
+    <title>主页</title>
+</head>
+<body>
+<div class="text-center"><h3>欢迎<span th:text="${username}"></span>，登陆成功！！！</h3></div>
+</body>
+</html>
