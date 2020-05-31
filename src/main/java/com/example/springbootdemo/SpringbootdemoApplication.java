@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Arrays;
 
@@ -19,6 +20,8 @@ import java.util.Arrays;
 @EnableAsync
 //扫描包下的所有Mapper接口类并注入为bean，无需在每一个Mapper接口类上使用注解@Mapper
 @MapperScan("com.example.springbootdemo.resource.mapping")
+//开启事务管理
+@EnableTransactionManagement
 public class SpringbootdemoApplication {
 
 	public static void main(String[] args) {
