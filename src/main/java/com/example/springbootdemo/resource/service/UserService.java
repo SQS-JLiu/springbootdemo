@@ -29,4 +29,8 @@ public class UserService {
     public UserDO getUserById(Integer id){
         return userDOMapper.selectByPrimaryKey(id);
     }
+
+    public List<UserDO> getAllUsers(){
+        return userDOMapper.selectAllUsers();
+    }
 }
