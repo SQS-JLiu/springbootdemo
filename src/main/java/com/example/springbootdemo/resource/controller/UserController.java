@@ -3,6 +3,8 @@ package com.example.springbootdemo.resource.controller;
 import com.example.springbootdemo.resource.domain.gen.UserDO;
 import com.example.springbootdemo.resource.service.UserService;
 import com.github.pagehelper.PageHelper;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +20,15 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/getAll")
+    //注意这里有两个授权限制(RequiresRoles和RequiresPermissions), 所以会请求两次doGetAuthorizationInfo授权方法
+    @RequiresRoles({"user"})   //要求用户的角色是user
+    @RequiresPermissions({"user:query"})   //要求用户具有权限user:query
+    @GetMapping("/getAll")    //  127.0.0.1:8080/user/getAll
     public List<UserDO> getAllUsers(){
         return  userService.getAllUsers();
     }
 
-    @GetMapping("/get/{page}")
+    @GetMapping("/get/{page}")   //  127.0.0.1:8080/user/get/1
     public List<UserDO> getUserPage(@PathVariable(value = "page",required = false) Integer pageNum){
         if(pageNum == 0){
             System.out.println("pageNum: "+pageNum);

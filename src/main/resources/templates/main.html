@@ -8,8 +8,25 @@
     <link rel="stylesheet" th:href="@{bootstrap-3.3.7/css/bootstrap.min.css}" type="text/css"/>
     <script th:src="@{js/jquery-3.5.1.js}"></script>
     <title>主页</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                 $.ajax({
+                        url:"/user/get/1",
+                        datatype:"json",
+                        type:"GET",
+                        success:function(data){
+                            $("#myData").text("数据："+JSON.stringify(data));
+                        }
+                })
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="text-center"><h3>欢迎<span th:text="${username}"></span>，登陆成功！！！</h3></div>
+<button class="btn btn-info" type="button">getUserPage</button>
+<div id="myData" class="text-center"></div>
+<div id="myStatus" class="text-center"></div>
 </body>
 </html>
